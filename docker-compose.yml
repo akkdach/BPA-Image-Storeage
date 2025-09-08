@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  bevpro-img-to-nas:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NAS_DIR=/nas/images
+      - PORT=3000
+    volumes:
+      - ./nas/images:/nas/images
+    restart: unless-stopped
